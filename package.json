@@ -1,6 +1,6 @@
 {
-  "name": "starter-next-js-chakra-ui",
-  "version": "0.1.0",
+  "name": "emplo",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
