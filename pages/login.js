@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Link } from "@chakra-ui/core";
+import { Heading } from "@chakra-ui/core";
 
 export default function Login() {
     return (
