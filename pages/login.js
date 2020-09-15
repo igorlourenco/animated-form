@@ -1,4 +1,5 @@
 import React, {useRef} from "react";
+import {useRouter} from "next/router";
 import {
     Button,
     Flex,
@@ -16,6 +17,8 @@ import Input from "../components/Input";
 import {useForm} from "react-hook-form";
 
 export default function Login() {
+    const router = useRouter();
+
     const formRef = useRef( null );
 
     const [show, setShow] = React.useState( false );
@@ -29,7 +32,8 @@ export default function Login() {
     const onSubmit = data => {
         handleLoading();
         console.log( data )
-        setTimeout( handleLoading, 2000 ); // falta dar certo aqui
+        // setTimeout( () => {handleLoading()}, 2000 ); // falta dar certo aqui
+        router.replace("/home");
     };
 
     return (
@@ -127,7 +131,7 @@ export default function Login() {
                 >
                     Não tem uma conta? {" "}
                     <Link
-                        color="teal.500"
+                        color="teal.600"
                         fontWeight="bold"
                         _hover={{
                             color: "teal.400"
