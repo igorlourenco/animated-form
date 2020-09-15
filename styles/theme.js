@@ -3,8 +3,8 @@ import {theme} from "@chakra-ui/core";
 const customTheme = {
     ...theme,
     fonts: {
-        body: "Lato, system-ui, sans-serif",
-        heading: "Lato, system-ui, sans-serif",
+        body: "Kumbh Sans, system-ui, sans-serif",
+        heading: "Kumbh Sans, system-ui, sans-serif",
         mono: "Menlo, monospace"
     },
     fontWeights: {
