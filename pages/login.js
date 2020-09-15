@@ -19,6 +19,9 @@ export default function Login() {
     const [show, setShow] = React.useState(false);
     const handleClick = () => setShow(!show);
 
+    const [isSending, setIsSending] = React.useState(false);
+    const handleSend = () => setIsSending(!isSending);
+
     return (
         <Grid
             as="main"
@@ -56,7 +59,7 @@ export default function Login() {
                         <IconButton
                             aria-label={show ? "view-off" : "view"}
                             icon={show ? "view-off" : "view"}
-                            onClick={handleClick}
+                            onClick={() => handleClick}
                             borderColor="gray.500"
                             color="white"
                             _hover={{
@@ -80,10 +83,12 @@ export default function Login() {
                 </Link>
 
                 <Button
+                    isLoading={isSending} // aqui
                     backgroundColor="teal.500"
                     height="50px"
                     borderRadius="sm"
                     marginTop={6}
+                    onClick={() => handleSend()} // continuar daqui
                     _hover={{
                         backgroundColor: "teal.600"
                     }}
