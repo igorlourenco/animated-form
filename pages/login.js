@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useRef } from "react";
 import {
     Button,
     Flex,
@@ -11,16 +11,26 @@ import {
 } from "@chakra-ui/core";
 
 import  { FaGoogle } from "react-icons/fa";
-
 import Divider from "../components/Divider";
 import Input from "../components/Input";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
+    const formRef = useRef(null);
+
     const [show, setShow] = React.useState(false);
     const handleClick = () => setShow(!show);
 
     const [loading, setLoading] = React.useState(false);
     const handleLoading = () => setLoading(!loading);
+
+    const { register, handleSubmit} = useForm();
+
+    const onSubmit = data => {
+        handleLoading();
+        console.log(data)
+        setTimeout(handleLoading, 2000); // falta dar certo aqui
+    };
 
     return (
         <Grid
@@ -46,32 +56,54 @@ export default function Login() {
                   alignItems="stretch"
                   padding={[5, 5, 16, 16]}
             >
-                <Input
-                    placeholder="E-mail"
-                />
+                <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
+                    <Input
+                        name="email"
+                        placeholder="E-mail"
+                        ref={register}
+                    />
 
-                <InputGroup>
-                <Input
-                    type={show ? "text" : "password"}
-                    placeholder="Senha"
-                    marginTop={2}/>
-                    <InputRightElement marginTop={3} marginX={2}>
-                        <IconButton
-                            aria-label={show ? "view-off" : "view"}
-                            icon={show ? "view-off" : "view"}
-                            onClick={() => handleClick()}
-                            borderColor="gray.500"
-                            color="white"
-                            _hover={{
-                                color: "teal.500"
-                            }}
-                        />
-                    </InputRightElement>
-                </InputGroup>
+                    <InputGroup>
+                        <Input
+                            name="password"
+                            type={show ? "text" : "password"}
+                            placeholder="Senha"
+                            ref={register}
+                            marginTop={2}/>
+                        <InputRightElement marginTop={3} marginX={2}>
+                            <IconButton
+                                aria-label={show ? "view-off" : "view"}
+                                icon={show ? "view-off" : "view"}
+                                onClick={() => handleClick()}
+                                borderColor="gray.500"
+                                color="white"
+                                _hover={{
+                                    color: "teal.500"
+                                }}
+                            />
+                        </InputRightElement>
+                    </InputGroup>
+
+                    <Button
+                        isLoading={loading}
+                        backgroundColor="teal.500"
+                        width="100%"
+                        height="50px"
+                        type="submit"
+                        borderRadius="sm"
+                        marginTop={6}
+                        _hover={{
+                            backgroundColor: "teal.600"
+                        }}
+                    >
+                        Entrar
+                    </Button>
+
+                </form>
 
                 <Link
-                    alignSelf="flex-start"
-                    marginTop={2}
+                    textAlign="center"
+                    marginTop={4}
                     fontSize="sm"
                     color="teal.600"
                     fontWeight="bold"
@@ -81,20 +113,6 @@ export default function Login() {
                 >
                     Esqueci minha senha
                 </Link>
-
-                <Button
-                    isLoading={loading} // aqui
-                    backgroundColor="teal.500"
-                    height="50px"
-                    borderRadius="sm"
-                    marginTop={6}
-                    onClick={() => handleLoading()} // continuar daqui
-                    _hover={{
-                        backgroundColor: "teal.600"
-                    }}
-                >
-                    Entrar
-                </Button>
 
                 <Text
                     textAlign="center"
