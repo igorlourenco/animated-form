@@ -4,13 +4,16 @@ import {
     Flex,
     Grid,
     Heading, IconButton,
-    Input,
     InputGroup,
     InputRightElement,
     Link,
     Text
 } from "@chakra-ui/core";
+
+import  { FaGoogle } from "react-icons/fa";
+
 import Divider from "../components/Divider";
+import Input from "../components/Input";
 
 export default function Login() {
     const [show, setShow] = React.useState(false);
@@ -41,19 +44,11 @@ export default function Login() {
                   padding={[5, 5, 16, 16]}
             >
                 <Input
-                    height="50px"
-                    backgroundColor="gray.900"
-                    focusBorderColor="teal.500"
-                    borderRadius="sm"
                     placeholder="E-mail"
                 />
 
                 <InputGroup>
                 <Input
-                    height="50px"
-                    backgroundColor="gray.900"
-                    focusBorderColor="teal.500"
-                    borderRadius="sm"
                     type={show ? "text" : "password"}
                     placeholder="Senha"
                     marginTop={2}/>
@@ -117,18 +112,18 @@ export default function Login() {
                 <Divider></Divider>
 
                 <Flex alignItems="center">
-                    <Text fontSize="sm">ou entre com</Text>
                     <Button
+                        leftIcon={FaGoogle}
                         height="50px"
                         flex="1"
                         backgroundColor="gray.600"
-                        marginLeft={6}
+                        mx={6}
                         borderRadius="sm"
                         _hover={{
                             backgroundColor: "teal.500"
                         }}
                     >
-                        Google
+                        Ou entre com Google
                     </Button>
                 </Flex>
             </Flex>
