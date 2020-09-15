@@ -16,11 +16,10 @@ const customTheme = {
     radii: {
         ...theme.radii,
         sm: "5px",
-        md: "8x"
+        md: "8px"
     },
     fontSizes: {
         ...theme.fontSizes,
-        "6xl": "54x"
     },
 }
 
