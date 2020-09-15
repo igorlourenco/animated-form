@@ -4,14 +4,10 @@ import {
     Flex,
     Grid,
     Heading, IconButton,
-    Image,
     Input,
     InputGroup,
     InputRightElement,
     Link,
-    List,
-    ListIcon,
-    ListItem,
     Text
 } from "@chakra-ui/core";
 import Divider from "../components/Divider";
@@ -24,21 +20,21 @@ export default function Login() {
         <Grid
             as="main"
             height="100vh"
-            templateColumns={["1fr 95% 1fr", "1fr 95% 1fr", "1fr 70% 1fr", "1fr 50% 1fr"]}
-            templateRows="1fr 100% 1fr"
+            templateColumns={["1fr 95% 1fr", "1fr 95% 1fr", "1fr 70% 1fr", "1fr 40% 1fr"]}
+            templateRows="1fr 80% 1fr"
             templateAreas="
             '. heading .'
             '. form .'
-            '. . .'
+            '. footer .'
             "
             justifyContent="center"
             alignItems="center"
         >
-            <Flex gridArea="heading" flexDir="column" align="center" my="15px">
+            <Flex gridArea="heading" flexDir="column" align="center" marginTop="35px">
                 <Heading size="2xl" lineHeight="shorter"> Emplo </Heading>
             </Flex>
 
-            <Flex gridArea="form" height="100%" backgroundColor="gray.700"
+            <Flex gridArea="form" height={["100%", "100%", "100%", "80%"]} backgroundColor="gray.700"
                   borderRadius="md"
                   flexDir="column"
                   alignItems="stretch"
@@ -136,6 +132,10 @@ export default function Login() {
                     </Button>
                 </Flex>
             </Flex>
+
+            <Flex gridArea="footer" flexDir="column" align="center" my="15px">
+            </Flex>
+
         </Grid>
     )
 }
