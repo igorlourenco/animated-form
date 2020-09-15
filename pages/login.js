@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, {useRef} from "react";
 import {
     Button,
     Flex,
@@ -10,26 +10,26 @@ import {
     Text
 } from "@chakra-ui/core";
 
-import  { FaGoogle } from "react-icons/fa";
+import {FaGoogle} from "react-icons/fa";
 import Divider from "../components/Divider";
 import Input from "../components/Input";
-import { useForm } from "react-hook-form";
+import {useForm} from "react-hook-form";
 
 export default function Login() {
-    const formRef = useRef(null);
+    const formRef = useRef( null );
 
-    const [show, setShow] = React.useState(false);
-    const handleClick = () => setShow(!show);
+    const [show, setShow] = React.useState( false );
+    const handleClick = () => setShow( !show );
 
-    const [loading, setLoading] = React.useState(false);
-    const handleLoading = () => setLoading(!loading);
+    const [loading, setLoading] = React.useState( false );
+    const handleLoading = () => setLoading( !loading );
 
-    const { register, handleSubmit} = useForm();
+    const {register, handleSubmit} = useForm();
 
     const onSubmit = data => {
         handleLoading();
-        console.log(data)
-        setTimeout(handleLoading, 2000); // falta dar certo aqui
+        console.log( data )
+        setTimeout( handleLoading, 2000 ); // falta dar certo aqui
     };
 
     return (
@@ -37,11 +37,11 @@ export default function Login() {
             as="main"
             height="100vh"
             templateColumns={["1fr 95% 1fr", "1fr 95% 1fr", "1fr 70% 1fr", "1fr 45% 1fr"]}
-            templateRows="1fr 80% 1fr"
+            templateRows="1fr 100% 1fr"
             templateAreas="
             '. heading .'
             '. form .'
-            '. footer .'
+            '. . .'
             "
             justifyContent="center"
             alignItems="center"
@@ -54,9 +54,14 @@ export default function Login() {
                   borderRadius="md"
                   flexDir="column"
                   alignItems="stretch"
-                  padding={[5, 5, 16, 16]}
+                  px={[5, 5, 16, 16]}
+                  py={4}
             >
-                <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
+                <Flex alignItems="center" marginBottom={3} py={2}>
+                    <Heading size="lg">Login</Heading>
+                </Flex>
+
+                <form onSubmit={handleSubmit( onSubmit )} ref={formRef}>
                     <Input
                         name="email"
                         placeholder="E-mail"
@@ -132,7 +137,7 @@ export default function Login() {
                     </Link>
                 </Text>
 
-                <Divider></Divider>
+                <Divider/>
 
                 <Flex alignItems="center">
                     <Button
@@ -150,10 +155,6 @@ export default function Login() {
                     </Button>
                 </Flex>
             </Flex>
-
-            <Flex gridArea="footer" flexDir="column" align="center" my="15px">
-            </Flex>
-
         </Grid>
     )
 }
