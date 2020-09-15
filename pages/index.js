@@ -1,8 +1,12 @@
 import React from "react";
-import HomePage from "../components/HomePage";
+import { Heading, Link } from "@chakra-ui/core";
+import {LOGIN} from "../consts/routes";
 
 export default function Home() {
   return (
-    <HomePage></HomePage>
+      <>
+        <Heading> Página Home </Heading>
+        <Link href={LOGIN}>FAZER LOGIN</Link>
+      </>
   )
 }
