@@ -11,10 +11,9 @@ import {
     Text
 } from "@chakra-ui/core";
 
-import {FaGoogle} from "react-icons/fa";
-import Divider from "../components/Divider";
 import Input from "../components/Input";
 import {useForm} from "react-hook-form";
+import {HOME, REGISTER} from "../consts/routes";
 
 export default function Login() {
     const router = useRouter();
@@ -33,7 +32,7 @@ export default function Login() {
         handleLoading();
         console.log( data )
         // setTimeout( () => {handleLoading()}, 2000 ); // falta dar certo aqui
-        router.replace("/home");
+        router.replace( HOME );
     };
 
     return (
@@ -50,16 +49,16 @@ export default function Login() {
             justifyContent="center"
             alignItems="center"
         >
-            <Flex gridArea="heading" flexDir="column" align="center" marginTop="35px">
+            <Flex gridArea="heading" flexDir="column" align="center" height="auto" marginTop={4}>
                 <Heading size="2xl" lineHeight="shorter"> Emplo </Heading>
             </Flex>
 
-            <Flex gridArea="form" height={["100%", "100%", "100%", "80%"]} backgroundColor="gray.700"
+            <Flex gridArea="form" height="auto" backgroundColor="gray.700"
                   borderRadius="md"
                   flexDir="column"
                   alignItems="stretch"
                   px={[5, 5, 16, 16]}
-                  py={4}
+                  py={5}
             >
                 <Flex alignItems="center" marginBottom={3} py={2}>
                     <Heading size="lg">Login</Heading>
@@ -133,6 +132,7 @@ export default function Login() {
                     <Link
                         color="teal.600"
                         fontWeight="bold"
+                        href={REGISTER}
                         _hover={{
                             color: "teal.400"
                         }}
@@ -140,24 +140,6 @@ export default function Login() {
                         Registre-se
                     </Link>
                 </Text>
-
-                <Divider/>
-
-                <Flex alignItems="center">
-                    <Button
-                        leftIcon={FaGoogle}
-                        height="50px"
-                        flex="1"
-                        backgroundColor="gray.600"
-                        mx={6}
-                        borderRadius="sm"
-                        _hover={{
-                            backgroundColor: "teal.500"
-                        }}
-                    >
-                        Ou entre com Google
-                    </Button>
-                </Flex>
             </Flex>
         </Grid>
     )

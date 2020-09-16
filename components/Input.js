@@ -8,6 +8,7 @@ function Input (props, ref){
         backgroundColor="gray.900"
         focusBorderColor="teal.500"
         borderRadius="sm"
+        marginTop={2}
         ref={ref}
         {...props}
     />
