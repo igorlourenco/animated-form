@@ -1,12 +1,15 @@
 import React from "react";
-import { Heading, Link } from "@chakra-ui/core";
-import {LOGIN} from "../consts/routes";
+import {Flex, Heading} from "@chakra-ui/core";
+import Header from "../components/sections/Header";
 
 export default function Home() {
-  return (
-      <>
-        <Heading> Página Home </Heading>
-        <Link href={LOGIN}>FAZER LOGIN</Link>
-      </>
-  )
+    return (
+        <Flex
+            direction="column"
+            align="center"
+            m="0 auto"
+        >
+            <Header/>
+        </Flex>
+    )
 }
