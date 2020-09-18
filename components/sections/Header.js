@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, Button, Flex, Heading, Icon, Link, Text} from "@chakra-ui/core";
 import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
-import {HOME, LOGIN} from "../../consts/routes";
+import {INDEX, LOGIN} from "../../consts/routes";
 
 const MenuItems = props => {
     const {children, isLast, to = "/", ...rest} = props
@@ -55,7 +55,7 @@ export default function Header() {
                     direction={["column", "column", "row", "row"]}
                     pt={[6, 6, 0, 0]}
                 >
-                    <MenuItems to={HOME}>Home</MenuItems>
+                    <MenuItems to={INDEX}>Home</MenuItems>
                     <MenuItems to={LOGIN} isLast>Login</MenuItems>
                 </Flex>
             </Box>

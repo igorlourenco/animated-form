@@ -11,18 +11,21 @@ InfoContainer.defaultProps = {
 export default function InfoContainer({title, subtitle, image, ...rest}) {
     return (
         <Flex
+            shadow="2xl"
+            borderRadius="md"
+            backgroundColor="gray.800"
             align="center"
             justify={{ base: "center", md: "space-around", xl: "space-between" }}
             direction={{ base: "column-reverse", md: "row" }}
             wrap="no-wrap"
             minH="70vh"
-            px={8}
+            px={[1, 1, 8, 8]}
             mb={16}
             {...rest}
         >
             <Stack
                 spacing={4}
-                w={{ base: "80%", md: "40%" }}
+                w={{ base: "80%", md: "50%" }}
                 align={["center", "center", "flex-start", "flex-start"]}
             >
                 <Heading
@@ -44,8 +47,8 @@ export default function InfoContainer({title, subtitle, image, ...rest}) {
                     {subtitle}
                 </Heading>
             </Stack>
-            <Box w={{ base: "70%", sm: "50%", md: "40%" }} mb={{ base: 12, md: 0 }}>
-                <Image src="/images/team-rafiki.svg" size="100%" rounded="1rem" shadow="2xl" />
+            <Box w={{ base: "80%", sm: "70%", md: "40%", lg: "40%" }} mb={{ base: 12, md: 0 }} borderRadius="md" backgroundColor="gray.700">
+                <Image src="/images/team-rafiki.svg" size="100%" shadow="2xl" />
             </Box>
         </Flex>
     )
