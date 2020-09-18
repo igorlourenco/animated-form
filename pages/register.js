@@ -13,7 +13,7 @@ import {
 
 import Input from "../components/Input";
 import {useForm} from "react-hook-form";
-import {HOME, LOGIN} from "../consts/routes";
+import {INDEX, LOGIN} from "../consts/routes";
 
 export default function Register() {
     const router = useRouter();
@@ -32,7 +32,7 @@ export default function Register() {
         handleLoading();
         console.log( data )
         // setTimeout( () => {handleLoading()}, 2000 ); // falta dar certo aqui
-        router.replace( HOME );
+        router.replace( INDEX );
     };
 
     return (
