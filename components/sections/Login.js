@@ -30,7 +30,6 @@ export default function Login() {
     const onSubmit = data => {
         handleLoading();
         console.log( data )
-        // setTimeout( () => {handleLoading()}, 2000 ); // falta dar certo aqui
         router.replace( INDEX );
     };
 

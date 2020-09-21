@@ -1,22 +1,5 @@
 import React from "react";
-import {Box, Button, Flex, Heading, Icon, Link, Text} from "@chakra-ui/core";
-import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai";
-import {INDEX, LOGIN} from "../../consts/routes";
-
-const MenuItems = props => {
-    const {children, isLast, to = "/", ...rest} = props
-    return (
-        <Text
-            mb={{base: 0, sm: 0}}
-            mr={{base: 0, sm: isLast ? 0 : 8}}
-            fontSize="20px"
-            {...rest}
-
-        >
-            <Link href={to}>{children}</Link>
-        </Text>
-    )
-}
+import {Flex, Heading, Link, Text} from "@chakra-ui/core";
 
 export default function Header() {
     const [show, setShow] = React.useState( false )
