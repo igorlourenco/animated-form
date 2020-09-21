@@ -32,33 +32,18 @@ export default function Header() {
             mb={8}
             p={3}
             pr={6}
-            bg="teal.500"
+            bg="transparent"
             color="white"
         >
             <Flex align="center">
-                <Heading size="xl"
-                         color="white"
-                >Emplo</Heading>
+                <Heading
+                    size="xl"
+                    color="white"
+                >
+                    Emplo
+                </Heading>
             </Flex>
 
-            <Box display={{base: "block", md: "none"}} onClick={toggleMenu}>
-                {show ? <Icon name={AiOutlineMenu}/> : <Icon name={AiOutlineClose}/>}
-            </Box>
-
-            <Box
-                display={{base: show ? "block" : "none", md: "block"}}
-                flexBasis={{base: "100%", md: "auto"}}
-            >
-                <Flex
-                    align="center"
-                    justify={["center", "center", "flex-end", "flex-end"]}
-                    direction={["column", "column", "row", "row"]}
-                    pt={[6, 6, 0, 0]}
-                >
-                    <MenuItems to={INDEX}>Home</MenuItems>
-                    <MenuItems to={LOGIN} isLast>Login</MenuItems>
-                </Flex>
-            </Box>
         </Flex>
     )
 }

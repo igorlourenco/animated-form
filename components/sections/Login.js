@@ -12,7 +12,7 @@ import {
 
 import Input from "../Input";
 import {useForm} from "react-hook-form";
-import {INDEX, REGISTER} from "../../consts/routes";
+import {INDEX} from "../../consts/routes";
 
 export default function Login() {
     const router = useRouter();
@@ -119,7 +119,7 @@ export default function Login() {
                 <Link
                     color="teal.600"
                     fontWeight="bold"
-                    href={REGISTER}
+                    href={INDEX}
                     _hover={{
                         color: "teal.400"
                     }}
