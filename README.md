@@ -19,4 +19,6 @@
 ##### Practiced concepts:
 * Component animation.
 
+---
+
 Made With ❤️ & JavaScript by Igor Lourenço
